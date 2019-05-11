@@ -1,5 +1,6 @@
 class TabLink {
   constructor(tabElement){
+
     // assign this.tabElement to the tabElement DOM reference
     // this.tabElement;
     
@@ -17,8 +18,7 @@ class TabLink {
       // else if `all` is false, only select the cards with matching this.tabData values
       // this.cards = ;
     }
-    /* <- Delete this comment block when you work on the if statement
-
+    */ //<- Delete this comment block when you work on the if statement
      // Map over the newly converted NodeList we just created in our if statement above. Convert each this.cards element into a new instance of the TabCard class. Pass in a card object to the TabCard class. 
     // this.cards = Array.from(this.cards).map();
 
@@ -69,4 +69,8 @@ class TabCard {
 - In your .forEach() method's callback function, return a new instance of TabLink and pass in each tab as a parameter
 
 */
-let tabs = document.querySelectorAll();
+let tabs = document.querySelectorAll(".tab");
+
+tabs.forEach(function(tab) {
+  return new TabLink(tab);
+});
